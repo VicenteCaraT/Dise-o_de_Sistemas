@@ -30,7 +30,7 @@ public class Cliente implements Serializable {
     private Domicilio domicilio;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "cliente_id")
+    @JoinColumn(name = "fk_cliente")
     @Builder.Default
     private List<Factura> facturas = new ArrayList<>();
 

@@ -47,6 +47,7 @@ public class Main {
             Factura fac1 = Factura.builder()
                     .fecha("27/08/2024")
                     .numero(40)
+                    .total(10000)
                     .build();
 
             Cliente cli1 = Cliente.builder()

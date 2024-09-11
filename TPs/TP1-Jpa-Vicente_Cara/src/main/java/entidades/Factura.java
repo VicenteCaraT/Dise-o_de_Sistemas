@@ -29,7 +29,7 @@ public class Factura {
     private Cliente cliente;
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
-    @JoinColumn(name = "factura_id")
+    @JoinColumn(name = "fk_factura")
     @Builder.Default
     private List<DetalleFactura> detalles = new ArrayList<>();
 }
