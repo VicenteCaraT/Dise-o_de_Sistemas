@@ -100,17 +100,17 @@ public class Main {
             entityManager.flush();
             entityManager.getTransaction().commit();
 
-            // Actualizar la persona
+            // Actualizar la cliente
             entityManager.getTransaction().begin();
             cli1.setDni(44912312);
             cli1.setApellido("Tapia");
             entityManager.merge(cli1);
             entityManager.getTransaction().commit();
 
-            // Buscar la persona por ID
+            // Buscar la cliente por ID
             Cliente clienteEncontrado = entityManager.find(Cliente.class, cli1.getId());
 
-            System.out.println("Persona encontrada: " + clienteEncontrado);
+            System.out.println("Cliente encontrado: " + clienteEncontrado);
 
 
             // Desconectar la entidad (estado Detached)
@@ -118,8 +118,8 @@ public class Main {
             entityManager.detach(cli2);
             entityManager.getTransaction().commit();
 
-            System.out.println("Voy a eliminar persona que ya no está vinculada");
-            // Eliminar la persona
+            System.out.println("Voy a eliminar cliente que ya no está vinculada");
+            // Eliminar el cliente
             entityManager.getTransaction().begin();
             entityManager.remove(cli2);
             entityManager.getTransaction().commit();
